@@ -1,0 +1,40 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set Up Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
+
+      - name: Build Docker Image
+        run: |
+          docker build -t my-php-app .
+
+      - name: Run Container
+        run: |
+          docker run -d -p 80:80 --name my-running-app my-php-app
+
+      - name: Wait for Apache to Start
+        run: |
+          sleep 10 # Wait for the container to start
+
+      - name: Run Tests
+        run: |
+          curl http://localhost/index.php
+
+      - name: Stop and Remove Container
+        run: |
+          docker stop my-running-app
+          docker rm my-running-app
