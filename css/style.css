@@ -1,0 +1,104 @@
+/* Global styles  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #1f2029;
+    height: 100vh;
+}
+
+
+/* Container Start  */
+
+.container {
+    width: 450px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    background: #2a2b38;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.container form input,
+.container form textarea{
+    width: 80%;
+    height: 45px;
+    margin: 10px 0;
+    border: 0;
+    outline: 0;
+    background: #1f2029;
+    color: #fff;
+    font-size: 18px;
+    padding-left: 15px;
+    border-radius: 5px;
+}
+
+.container form textarea {
+    height: 100px;
+    padding-top: 10px;
+}
+
+.container form input:focus,
+.container form textarea:focus {
+    border: 1px solid #fff;
+}
+
+.container form input[type='submit'] {
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.container form input[type='submit']:hover {
+    background: #3c3d4f;
+}
+
+
+/* Message Start  */
+
+.container .message-container {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: #2a2b38;
+    color: #fff;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 15px 0;
+    max-height: 450px;
+    overflow-y: scroll;
+}
+
+.container .message-container .message {
+    background: #1f2029;
+    width: 80%;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.container .message-container::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+
+
