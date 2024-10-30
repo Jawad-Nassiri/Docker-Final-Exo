@@ -1,0 +1,11 @@
+.git
+
+*.log
+
+.env
+
+tmp/
+temp/
+
+.DS_Store    # macOS
+Thumbs.db    # Windows
